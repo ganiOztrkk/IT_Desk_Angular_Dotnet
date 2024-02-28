@@ -1,0 +1,14 @@
+
+<div class="card">
+    <p-menubar [model]="itemsStart">
+        <ng-template pTemplate="start">
+            <img src="https://cdn.pixabay.com/photo/2016/10/27/12/55/turkish-flag-1774834_1280.png" height="40" class="mr-2" />
+        </ng-template>
+        <ng-template pTemplate="end">
+            <p-button label="Çıkış Yap" icon="pi pi-power-off" [text]="true" severity="secondary"></p-button>
+        </ng-template>
+    </p-menubar>
+</div>
+
+
+<router-outlet></router-outlet>
