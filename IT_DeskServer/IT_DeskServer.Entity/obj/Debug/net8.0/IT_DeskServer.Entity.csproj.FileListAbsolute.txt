@@ -1,0 +1,11 @@
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/bin/Debug/net8.0/IT_DeskServer.Entity.deps.json
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/bin/Debug/net8.0/IT_DeskServer.Entity.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/bin/Debug/net8.0/IT_DeskServer.Entity.pdb
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/IT_DeskServer.Entity.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/IT_DeskServer.Entity.AssemblyInfoInputs.cache
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/IT_DeskServer.Entity.AssemblyInfo.cs
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/IT_DeskServer.Entity.csproj.CoreCompileInputs.cache
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/IT_DeskServer.Entity.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/refint/IT_DeskServer.Entity.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/IT_DeskServer.Entity.pdb
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/ref/IT_DeskServer.Entity.dll

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "fjAaLC02/S80WCp58PDcOaCUQd8bPR5H0cfTBUqsHtk=",
+  "Source": "IT_DeskServer.WebApi",
+  "BasePath": "_content/IT_DeskServer.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
