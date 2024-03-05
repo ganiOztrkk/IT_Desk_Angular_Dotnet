@@ -1,0 +1,16 @@
+.lowercaseValid{
+    color: green;
+    text-decoration: line-through;
+}
+.uppercaseValid{
+    color: green;
+    text-decoration: line-through;
+}
+.numericValid{
+    color: green;
+    text-decoration: line-through;
+}
+.charLengthValid{
+    color: green;
+    text-decoration: line-through;
+}

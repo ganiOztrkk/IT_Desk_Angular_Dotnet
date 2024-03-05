@@ -1,1 +1,37 @@
-<p>login works!</p>
+
+<div style="display: flex; justify-content: center; height: 95vh; align-items: center;" class="card">
+    <p-toast [life]="5000"></p-toast>
+    <p-card header="Giriş Sayfası" subheader="Bilgilerinizi doldurunuz" [style]="{ width: '100%', textAlign: 'center' }">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+        </ng-template>
+        <div>
+            <p-inputGroup>
+                <p-inputGroupAddon>
+                    <i class="pi pi-user"></i>
+                </p-inputGroupAddon>
+                <input (keyup)="usernameOrEmailValidation()" id="usernameOrEmail" [(ngModel)]="usernameOrEmail" pInputText placeholder="Kullanıcı Adı" style="width: 100%; border-radius: 5px;" />
+            </p-inputGroup>
+
+            <p-inputGroup [style]="{'margin-top':'10px'}">
+                <p-inputGroupAddon>
+                    <i class="pi pi-lock"></i>
+                </p-inputGroupAddon>
+                <p-password id="password" (keyup)="passwordValidation()" [(ngModel)]="password" placeholder="*******" [style]="{width: '100%'}">
+                    <ng-template pTemplate="footer">
+                        <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                            <li style="text-align: start;" id="charLength">En az 6 karakter</li>
+                            <li style="text-align: start;" id="lowercase">En az 1 küçük harf</li>
+                            <li style="text-align: start;" id="uppercase">En az 1 büyük harf</li>
+                            <li style="text-align: start;" id="numeric">En az 1 rakam</li>
+                        </ul>
+                    </ng-template>
+                </p-password>
+            </p-inputGroup>
+            
+        </div>
+        <ng-template pTemplate="footer">
+            <p-button (onClick)="signIn()" [style]="{width: '100%'}" label="Giriş Yap"></p-button>
+        </ng-template>
+    </p-card>
+</div>
