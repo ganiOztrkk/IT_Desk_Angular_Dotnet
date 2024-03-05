@@ -230,3 +230,4 @@
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.WebApi/bin/Debug/net8.0/AutoMapper.dll
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.WebApi/bin/Debug/net8.0/FluentValidation.dll
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.WebApi/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.WebApi/obj/Debug/net8.0/IT_DeskServer.WebApi.sourcelink.json

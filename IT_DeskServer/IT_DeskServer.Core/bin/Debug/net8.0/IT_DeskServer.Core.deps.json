@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "IT_DeskServer.Core/1.0.0": {
+        "runtime": {
+          "IT_DeskServer.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "IT_DeskServer.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

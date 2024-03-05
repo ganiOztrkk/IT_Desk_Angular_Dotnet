@@ -1,0 +1,12 @@
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/bin/Debug/net8.0/IT_DeskServer.DataAccess.deps.json
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/bin/Debug/net8.0/IT_DeskServer.DataAccess.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/bin/Debug/net8.0/IT_DeskServer.DataAccess.pdb
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.AssemblyInfoInputs.cache
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.AssemblyInfo.cs
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.csproj.CoreCompileInputs.cache
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.sourcelink.json
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/refint/IT_DeskServer.DataAccess.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.pdb
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/ref/IT_DeskServer.DataAccess.dll

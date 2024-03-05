@@ -1,0 +1,12 @@
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/bin/Debug/net8.0/IT_DeskServer.Core.deps.json
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/bin/Debug/net8.0/IT_DeskServer.Core.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/bin/Debug/net8.0/IT_DeskServer.Core.pdb
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/obj/Debug/net8.0/IT_DeskServer.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/obj/Debug/net8.0/IT_DeskServer.Core.AssemblyInfoInputs.cache
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/obj/Debug/net8.0/IT_DeskServer.Core.AssemblyInfo.cs
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/obj/Debug/net8.0/IT_DeskServer.Core.csproj.CoreCompileInputs.cache
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/obj/Debug/net8.0/IT_DeskServer.Core.sourcelink.json
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/obj/Debug/net8.0/IT_DeskServer.Core.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/obj/Debug/net8.0/refint/IT_DeskServer.Core.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/obj/Debug/net8.0/IT_DeskServer.Core.pdb
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/obj/Debug/net8.0/ref/IT_DeskServer.Core.dll
