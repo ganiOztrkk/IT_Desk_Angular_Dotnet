@@ -4,14 +4,74 @@
     "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/IT_DeskServer.DataAccess.csproj": {}
   },
   "projects": {
-    "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/IT_DeskServer.DataAccess.csproj": {
+    "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/IT_DeskServer.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/IT_DeskServer.DataAccess.csproj",
-        "projectName": "IT_DeskServer.DataAccess",
-        "projectPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/IT_DeskServer.DataAccess.csproj",
+        "projectUniqueName": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/IT_DeskServer.Business.csproj",
+        "projectName": "IT_DeskServer.Business",
+        "projectPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/IT_DeskServer.Business.csproj",
         "packagesPath": "/Users/gani/.nuget/packages/",
-        "outputPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/",
+        "outputPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gani/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/IT_DeskServer.Core.csproj": {
+                "projectPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/IT_DeskServer.Core.csproj"
+              },
+              "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/IT_DeskServer.Entity.csproj": {
+                "projectPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/IT_DeskServer.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/IT_DeskServer.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/IT_DeskServer.Core.csproj",
+        "projectName": "IT_DeskServer.Core",
+        "projectPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/IT_DeskServer.Core.csproj",
+        "packagesPath": "/Users/gani/.nuget/packages/",
+        "outputPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/gani/.nuget/NuGet/NuGet.Config"
@@ -37,6 +97,146 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/IT_DeskServer.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/IT_DeskServer.DataAccess.csproj",
+        "projectName": "IT_DeskServer.DataAccess",
+        "projectPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/IT_DeskServer.DataAccess.csproj",
+        "packagesPath": "/Users/gani/.nuget/packages/",
+        "outputPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gani/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/IT_DeskServer.Business.csproj": {
+                "projectPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/IT_DeskServer.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/IT_DeskServer.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/IT_DeskServer.Entity.csproj",
+        "projectName": "IT_DeskServer.Entity",
+        "projectPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/IT_DeskServer.Entity.csproj",
+        "packagesPath": "/Users/gani/.nuget/packages/",
+        "outputPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gani/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/IT_DeskServer.Core.csproj": {
+                "projectPath": "/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Core/IT_DeskServer.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

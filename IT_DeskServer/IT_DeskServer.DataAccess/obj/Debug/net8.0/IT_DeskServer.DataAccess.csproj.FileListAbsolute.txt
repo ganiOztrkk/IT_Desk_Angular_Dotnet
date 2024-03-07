@@ -10,3 +10,13 @@
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/refint/IT_DeskServer.DataAccess.dll
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.pdb
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/ref/IT_DeskServer.DataAccess.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/bin/Debug/net8.0/IT_DeskServer.DataAccess.runtimeconfig.json
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/bin/Debug/net8.0/IT_DeskServer.Entity.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/bin/Debug/net8.0/IT_DeskServer.Entity.pdb
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.csproj.AssemblyReference.cache
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.csproj.CopyComplete
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/obj/Debug/net8.0/IT_DeskServer.DataAccess.genruntimeconfig.cache
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/bin/Debug/net8.0/IT_DeskServer.Business.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/bin/Debug/net8.0/IT_DeskServer.Business.pdb
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/bin/Debug/net8.0/IT_DeskServer.Core.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.DataAccess/bin/Debug/net8.0/IT_DeskServer.Core.pdb

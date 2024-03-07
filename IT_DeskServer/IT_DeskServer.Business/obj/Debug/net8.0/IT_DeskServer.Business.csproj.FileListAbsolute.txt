@@ -10,3 +10,9 @@
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/obj/Debug/net8.0/refint/IT_DeskServer.Business.dll
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/obj/Debug/net8.0/IT_DeskServer.Business.pdb
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/obj/Debug/net8.0/ref/IT_DeskServer.Business.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/bin/Debug/net8.0/IT_DeskServer.Core.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/bin/Debug/net8.0/IT_DeskServer.Entity.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/bin/Debug/net8.0/IT_DeskServer.Core.pdb
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/bin/Debug/net8.0/IT_DeskServer.Entity.pdb
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/obj/Debug/net8.0/IT_DeskServer.Business.csproj.AssemblyReference.cache
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Business/obj/Debug/net8.0/IT_DeskServer.Business.csproj.CopyComplete

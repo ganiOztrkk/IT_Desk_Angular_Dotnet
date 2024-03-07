@@ -3,7 +3,12 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\IT_DeskServer.Core\IT_DeskServer.Core.csproj" />
+      <ProjectReference Include="..\IT_DeskServer.Entity\IT_DeskServer.Entity.csproj" />
+    </ItemGroup>
 
 </Project>

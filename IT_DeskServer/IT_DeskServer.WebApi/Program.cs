@@ -1,6 +1,10 @@
 using FluentValidation;
+using IT_DeskServer.DataAccess;
+using IT_DeskServer.WebApi.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDataAccess(builder.Configuration);
 
 builder.Services.AddCors(config =>
 {
@@ -26,6 +30,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+CreateDeveloperUserMiddleware.CreateFirstUser(app);
 
 app.UseCors();
 

@@ -10,3 +10,7 @@
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/IT_DeskServer.Entity.pdb
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/ref/IT_DeskServer.Entity.dll
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/IT_DeskServer.Entity.sourcelink.json
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/IT_DeskServer.Entity.csproj.AssemblyReference.cache
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/obj/Debug/net8.0/IT_DeskServer.Entity.csproj.CopyComplete
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/bin/Debug/net8.0/IT_DeskServer.Core.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.Entity/bin/Debug/net8.0/IT_DeskServer.Core.pdb
