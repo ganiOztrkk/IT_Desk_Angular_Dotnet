@@ -266,3 +266,5 @@
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.WebApi/bin/Debug/net8.0/IT_DeskServer.Core.pdb
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.WebApi/bin/Debug/net8.0/IT_DeskServer.DataAccess.pdb
 /Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.WebApi/bin/Debug/net8.0/Scrutor.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.WebApi/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.UI.dll
+/Users/gani/Desktop/Github/IT_Desk/IT_DeskServer/IT_DeskServer.WebApi/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

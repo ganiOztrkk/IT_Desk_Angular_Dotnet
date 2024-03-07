@@ -5,5 +5,5 @@ namespace IT_DeskServer.Business.Services;
 
 public interface IAuthService
 {
-    public Task<IResult> LoginAsync(LoginDto request, CancellationToken cancellationToken);
+    public Task<IDataResult<string>> LoginAsync(LoginDto request, CancellationToken cancellationToken);
 }
