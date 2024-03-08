@@ -96,7 +96,6 @@ export default class HomeComponent{
     }
   }
 
-  
   getSeverity(status: string) {
     switch (status) {
       case 'unqualified':

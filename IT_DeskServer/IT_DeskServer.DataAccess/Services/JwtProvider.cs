@@ -16,12 +16,12 @@ public class JwtProvider(IOptions<Jwt> jwt) : IJwtProvider //jwt sınıfını io
     {
         var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.NameIdentifier, string.Join(" ", user.Name, user.Lastname)),
+            new Claim("userId", user.Id.ToString()),
+            new Claim("userFullName", string.Join(" ", user.Name, user.Lastname)),
             new Claim("username", user.UserName!)
         };
 
-        var tokenExpires = rememberMe ? DateTime.Now.AddDays(7) : DateTime.Now.AddMinutes(20);
+        var tokenExpires = rememberMe ? DateTime.Now.AddDays(7) : DateTime.Now.AddMinutes(30);
 
         var securityToken = new JwtSecurityToken(
         issuer: jwt.Value.Issuer,

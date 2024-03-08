@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -16,6 +17,15 @@ import { ButtonModule } from 'primeng/button';
 export class LayoutsComponent implements OnInit {
   itemsStart: MenuItem[] | undefined;
 
+
+
+  constructor(
+    private router: Router,
+    public auth: AuthService
+  ) {
+    
+  }
+
   ngOnInit() {
     this.itemsStart = [
       {
@@ -26,4 +36,10 @@ export class LayoutsComponent implements OnInit {
       },
     ];
   }
+
+  logOut(){
+    localStorage.removeItem("token");
+    this.router.navigateByUrl("/login");
+  }
+
 }

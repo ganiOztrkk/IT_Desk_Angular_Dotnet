@@ -5,8 +5,11 @@
             <img src="https://cdn.pixabay.com/photo/2016/10/27/12/55/turkish-flag-1774834_1280.png" height="40px" width="60px" class="mr-2" />
         </ng-template>
         <ng-template pTemplate="end">
-            <p-button label="Çıkış Yap" icon="pi pi-power-off" [text]="true" severity="secondary"></p-button>
-        </ng-template>
+            <div style="display: flex; align-items: center;">
+                <label style="margin-right: 10px;">{{auth.userFullName}}</label>
+                <p-button (onClick)="logOut()" label="Çıkış Yap" icon="pi pi-power-off" [text]="true" severity="secondary"></p-button>
+            </div>
+            </ng-template>
     </p-menubar>
 </div>
 

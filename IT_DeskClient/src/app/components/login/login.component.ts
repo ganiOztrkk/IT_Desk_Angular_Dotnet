@@ -9,6 +9,10 @@ import { DividerModule } from 'primeng/divider';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { HttpClient } from '@angular/common/http';
+import { LoginModel } from '../../models/login.model';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +26,8 @@ import { MessageService } from 'primeng/api';
     FormsModule,
     DividerModule,
     InputTextModule,
-    ToastModule
+    ToastModule,
+    InputSwitchModule
   ],
   providers:[
     MessageService
@@ -31,13 +36,15 @@ import { MessageService } from 'primeng/api';
   styleUrl: './login.component.css'
 })
 export default class LoginComponent {
-  password: string = "";
-  usernameOrEmail: string = "";
-
-
+  loginModel: LoginModel = new LoginModel();
+  password: string = "1234Aa";
+  usernameOrEmail: string = "developer";
+  hasRememberMe: boolean = false;
 
 constructor(
-  private messageService: MessageService
+  private messageService: MessageService,
+  private http: HttpClient,
+  private router: Router
 ) {}
 
 
@@ -93,9 +100,26 @@ signIn(){
       summary: 'Lütfen geçerli bilgi giriniz', 
       detail: 'Kullanıcı adı en az 3 karakter içermelidir ve şifre belirtilen kurallara uygun olmalıdır.' 
      });
-  }
-  
+  }else{
+    this.loginModel.password = this.password;
+    this.loginModel.usernameOrEmail = this.usernameOrEmail;
+    this.loginModel.hasRememberMe = this.hasRememberMe;
 
+    this.http.post("http://localhost:5180/api/Auth/Login", this.loginModel)
+    .subscribe({
+      next:(res : any) => {
+        localStorage.setItem("token", JSON.stringify(res.accessToken));
+        this.router.navigateByUrl("/");
+      },
+      error: (err)=> {
+        this.messageService.add({
+          severity: 'error', 
+          summary: 'Hata!', 
+          detail: err.error.message
+         });
+      }
+    })
+  }
 }
 
 }

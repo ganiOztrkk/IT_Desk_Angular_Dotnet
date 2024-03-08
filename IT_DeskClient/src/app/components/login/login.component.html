@@ -28,7 +28,10 @@
                     </ng-template>
                 </p-password>
             </p-inputGroup>
-            
+            <div style="float: right; margin-top: 10px; display: flex; align-items: center;">
+                <label style="margin-right: 10px;">Beni Hatırla</label>
+                <p-inputSwitch [(ngModel)]="hasRememberMe"></p-inputSwitch>
+            </div>
         </div>
         <ng-template pTemplate="footer">
             <p-button (onClick)="signIn()" [style]="{width: '100%'}" label="Giriş Yap"></p-button>
