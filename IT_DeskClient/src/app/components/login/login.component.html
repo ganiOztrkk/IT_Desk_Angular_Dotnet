@@ -34,7 +34,14 @@
             </div>
         </div>
         <ng-template pTemplate="footer">
-            <p-button (onClick)="signIn()" [style]="{width: '100%'}" label="Giriş Yap"></p-button>
+            <div>
+                <p-button (onClick)="signIn()" [style]="{width: '100%'}" label="Giriş Yap"></p-button>
+            </div>
+            <div style="margin-top: 5px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <label>veya</label>
+                <label style="margin-top: 5px; margin-bottom: 5px;">Google ile giriş yap!</label>
+                <asl-google-signin-button onclick="test()" logo_alignment="center" type='icon' size='large'></asl-google-signin-button>
+            </div>
         </ng-template>
     </p-card>
 </div>

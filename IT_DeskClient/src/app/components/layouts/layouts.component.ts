@@ -20,7 +20,6 @@ export class LayoutsComponent implements OnInit {
 
 
   constructor(
-    private router: Router,
     public auth: AuthService
   ) {
     
@@ -39,7 +38,7 @@ export class LayoutsComponent implements OnInit {
 
   logOut(){
     localStorage.removeItem("token");
-    this.router.navigateByUrl("/login");
+    location.href = "/login";
   }
 
 }

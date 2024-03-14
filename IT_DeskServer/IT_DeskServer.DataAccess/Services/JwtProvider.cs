@@ -16,9 +16,10 @@ public class JwtProvider(IOptions<Jwt> jwt) : IJwtProvider //jwt sınıfını io
     {
         var claims = new List<Claim>
         {
+            new Claim(ClaimTypes.NameIdentifier, user.UserName ?? string.Empty),
             new Claim("userId", user.Id.ToString()),
             new Claim("userFullName", string.Join(" ", user.Name, user.Lastname)),
-            new Claim("username", user.UserName!)
+            new Claim("username", user.UserName ?? string.Empty)
         };
 
         var tokenExpires = rememberMe ? DateTime.Now.AddDays(7) : DateTime.Now.AddMinutes(30);

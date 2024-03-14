@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { InputGroupModule } from 'primeng/inputgroup';
@@ -9,10 +9,12 @@ import { DividerModule } from 'primeng/divider';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { LoginModel } from '../../models/login.model';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { Router } from '@angular/router';
+import { GoogleSigninButtonModule, SocialAuthService } from "@abacritt/angularx-social-login";
+import { GoogleLoginModel } from '../../models/googleLogin.model';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +29,8 @@ import { Router } from '@angular/router';
     DividerModule,
     InputTextModule,
     ToastModule,
-    InputSwitchModule
+    InputSwitchModule,
+    GoogleSigninButtonModule
   ],
   providers:[
     MessageService
@@ -35,8 +38,9 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export default class LoginComponent {
+export default class LoginComponent implements OnInit {
   loginModel: LoginModel = new LoginModel();
+  googleLoginModel : GoogleLoginModel = new GoogleLoginModel();
   password: string = "1234Aa";
   usernameOrEmail: string = "developer";
   hasRememberMe: boolean = false;
@@ -44,8 +48,35 @@ export default class LoginComponent {
 constructor(
   private messageService: MessageService,
   private http: HttpClient,
-  private router: Router
+  private router: Router,
+  private authService: SocialAuthService
 ) {}
+ngOnInit() {
+  this.authService.authState.subscribe((user) => {
+    this.googleLoginModel.id = user.id;
+    this.googleLoginModel.idToken = user.idToken;
+    this.googleLoginModel.firstName = user.firstName;
+    this.googleLoginModel.lastName = user.lastName;
+    this.googleLoginModel.name = user.name;
+    this.googleLoginModel.photoUrl = user.photoUrl;
+    this.googleLoginModel.email = user.email;
+    this.http.post("http://localhost:5180/api/Auth/GoogleLogin", this.googleLoginModel)
+    .subscribe({
+      next:(res : any) => {
+        localStorage.setItem("token", JSON.stringify(res.accessToken));
+        this.router.navigateByUrl("/");
+      },
+      error: (err : HttpErrorResponse)=> {
+        this.messageService.add({
+          severity: 'error', 
+          summary: 'Hata!', 
+          detail: err.error.message
+         });
+      }
+    })
+
+  });
+}
 
 
 usernameOrEmailValidation(){
@@ -111,7 +142,7 @@ signIn(){
         localStorage.setItem("token", JSON.stringify(res.accessToken));
         this.router.navigateByUrl("/");
       },
-      error: (err)=> {
+      error: (err : HttpErrorResponse)=> {
         this.messageService.add({
           severity: 'error', 
           summary: 'Hata!', 

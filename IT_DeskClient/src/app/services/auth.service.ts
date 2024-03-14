@@ -22,37 +22,39 @@ export class AuthService {
     try {
       const accessToken = localStorage.getItem("token");
       if (!accessToken) {
-        this.router.navigateByUrl("/login");
+        this.handleAuthenticationFailure();
         return false;
       }
       const decodedToken: any = jwtDecode(accessToken);
       if (!decodedToken) {
-        this.router.navigateByUrl("/login");
+        this.handleAuthenticationFailure();
         return false;
       }
       const currentTime = Date.now() / 1000; // saniye türünden şimdiki zaman
       if (decodedToken.exp < currentTime) { // token expire check
-        this.clearUserData();
-        this.router.navigateByUrl("/login");
+        this.handleAuthenticationFailure();
         return false;
       }
       this.userId = decodedToken.userId;
       this.userFullName = decodedToken.userFullName;
       this.username = decodedToken.username;
       if (!this.userId) {
-        this.clearUserData();
-        this.router.navigateByUrl("/login");
+        this.handleAuthenticationFailure();
         return false;
       }
       return true;
 
     } catch (error) {
-      this.clearUserData(); // Clear user data on error
-      this.router.navigateByUrl("/login");
+      this.handleAuthenticationFailure();
       return false;
     }
     
    }
+
+   handleAuthenticationFailure(){
+    this.clearUserData();
+    this.router.navigateByUrl("/login");
+  }
 
    clearUserData(){
     this.userId = "";
