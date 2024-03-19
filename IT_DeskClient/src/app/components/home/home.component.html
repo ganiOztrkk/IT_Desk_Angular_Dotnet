@@ -1,5 +1,5 @@
 <p-toast></p-toast>
-<div class="card flex justify-content-center flex-wrap gap-3 align-items-center mt-2">
+<div class="mt-2" style="padding: 0; padding-left: 27px;">
     <p-button (click)="show()" label="Yeni Destek Talebi" icon="pi pi-plus"></p-button>
 </div>
 
@@ -8,14 +8,14 @@
     [rows]="10" [paginator]="true" stateStorage="session" stateKey="statedemo-session">
         <ng-template pTemplate="header">
             <tr>
-                <th pSortableColumn="id" style="width:25%">ID 
+                <th pSortableColumn="id" style="width:30%">ID 
                 <p-sortIcon field="id"></p-sortIcon>
                 </th>
-                <th pSortableColumn="createDate" style="width:25%">Oluşturma Tarihi <p-sortIcon field="createDate"></p-sortIcon>
+                <th pSortableColumn="createDate" style="width:30%">Oluşturma Tarihi <p-sortIcon field="createDate"></p-sortIcon>
                 </th>
-                <th pSortableColumn="subject" style="width:25%">Konu <p-sortIcon field="subject"></p-sortIcon>
+                <th pSortableColumn="subject" style="width:30%">Konu <p-sortIcon field="subject"></p-sortIcon>
                 </th>
-                <th pSortableColumn="isActive" style="width:25%">Durum 
+                <th pSortableColumn="isActive" style="width:10%">Durum 
                 <p-sortIcon field="isActive"></p-sortIcon>
                 </th>
             </tr>
@@ -35,7 +35,7 @@
         </tr>
         </ng-template>
         <ng-template pTemplate="body" let-ticket>
-            <tr [pSelectableRow]="ticket">
+            <tr (click)="test()" [pSelectableRow]="ticket">
                 <td>
                     <span class="p-column-title">ID</span>
                     {{ticket.id}}
@@ -48,7 +48,7 @@
                     <span class="p-column-title">Subject</span>
                     <span class="ml-1 vertical-align-middle">{{ticket.subject}}</span>
                 </td>
-                <td>
+                <td style="text-align: center;">
                     <span class="p-column-title">Status</span>
                     <p-tag [value]="ticket.isActive ? 'Aktif' : 'Kapandı'" [severity]="getSeverity(ticket.isActive)"></p-tag>
                 </td>
@@ -56,10 +56,8 @@
         </ng-template>
         <ng-template pTemplate="emptymessage">
             <tr>
-                <td colspan="4">No customers found.</td>
+                <td colspan="4">Ticket bulunamadı.</td>
             </tr>
         </ng-template>
     </p-table>
 </div>
-
-

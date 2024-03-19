@@ -17,6 +17,7 @@ import { AuthService } from '../../services/auth.service';
 import { DatePipe } from '@angular/common';
 import { ToastModule } from 'primeng/toast';
 import { ErrorService } from '../../services/error.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -38,7 +39,7 @@ export default class HomeComponent implements OnInit{
 
   @ViewChild('dt1') dt1: any;
   tickets : TicketModel[] = [];
-  selectedTickets!: TicketModel;
+  selectedTickets: TicketModel = new TicketModel();
   ref: DynamicDialogRef | undefined;
 
   constructor(
@@ -47,7 +48,8 @@ export default class HomeComponent implements OnInit{
     private http: HttpClient,
     private auth: AuthService,
     public date: DatePipe,
-    private error: ErrorService
+    private error: ErrorService,
+    private route: Router
   ) {}
 
 
@@ -145,6 +147,15 @@ export default class HomeComponent implements OnInit{
     const value = input.value; // Artık "value" kesinlikle string olarak kabul edilecektir.
     // Filter uygulama işlemi
     this.dt1.filter(value, field, 'contains');
+}
+
+test(){
+  try {
+    this.route.navigateByUrl("ticket-details/" + this.selectedTickets.id)
+  } catch (error) {
+    return;
+  }
+  
 }
 
 }
