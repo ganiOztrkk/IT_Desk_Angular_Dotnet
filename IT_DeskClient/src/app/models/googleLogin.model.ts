@@ -7,3 +7,4 @@ export class GoogleLoginModel{
     name: string | null | undefined = "";
     photoUrl: string | null | undefined = "";
 }
+

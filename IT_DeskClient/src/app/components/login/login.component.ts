@@ -1,4 +1,4 @@
-import { Component, OnInit, input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { InputGroupModule } from 'primeng/inputgroup';
@@ -15,6 +15,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { Router } from '@angular/router';
 import { GoogleSigninButtonModule, SocialAuthService } from "@abacritt/angularx-social-login";
 import { GoogleLoginModel } from '../../models/googleLogin.model';
+import { ErrorService } from '../../services/error.service';
 
 @Component({
   selector: 'app-login',
@@ -49,8 +50,10 @@ constructor(
   private messageService: MessageService,
   private http: HttpClient,
   private router: Router,
-  private authService: SocialAuthService
+  private authService: SocialAuthService,
+  private error: ErrorService
 ) {}
+
 ngOnInit() {
   this.authService.authState.subscribe((user) => {
     this.googleLoginModel.id = user.id;
@@ -78,7 +81,6 @@ ngOnInit() {
   });
 }
 
-
 usernameOrEmailValidation(){
   let input = document.getElementById("usernameOrEmail");
   if (this.usernameOrEmail.length < 3) {
@@ -87,6 +89,7 @@ usernameOrEmailValidation(){
     input?.classList.remove("ng-invalid", "ng-dirty")
   }
 }
+
 passwordValidation(){
   let hasUppercase = /[A-Z]/.test(this.password);
   let hasLowercase = /[a-z]/.test(this.password);
@@ -143,11 +146,7 @@ signIn(){
         this.router.navigateByUrl("/");
       },
       error: (err : HttpErrorResponse)=> {
-        this.messageService.add({
-          severity: 'error', 
-          summary: 'Hata!', 
-          detail: err.error.message
-         });
+        this.error.errorHandler(err);
       }
     })
   }

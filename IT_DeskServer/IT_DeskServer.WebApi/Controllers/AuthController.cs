@@ -1,6 +1,5 @@
 using IT_DeskServer.Business.DTOs;
 using IT_DeskServer.Business.Services;
-using IT_DeskServer.DataAccess.Services;
 using IT_DeskServer.WebApi.Abstracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

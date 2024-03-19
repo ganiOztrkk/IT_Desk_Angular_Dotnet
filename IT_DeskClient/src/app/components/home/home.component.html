@@ -1,51 +1,56 @@
+<p-toast></p-toast>
 <div class="card flex justify-content-center flex-wrap gap-3 align-items-center mt-2">
     <p-button (click)="show()" label="Yeni Destek Talebi" icon="pi pi-plus"></p-button>
 </div>
 
 <div class="card mt-2">
-    <p-table #dt1 [value]="customers" selectionMode="single" [(selection)]="selectedCustomers" dataKey="id" [tableStyle]="{'min-width': '50rem'}"
+    <p-table #dt1 [value]="tickets" selectionMode="single" [(selection)]="selectedTickets" dataKey="id" [tableStyle]="{'min-width': '50rem'}"
     [rows]="10" [paginator]="true" stateStorage="session" stateKey="statedemo-session">
         <ng-template pTemplate="header">
             <tr>
-                <th pSortableColumn="name" style="width:25%">Name <p-sortIcon field="name"></p-sortIcon></th>
-                <th pSortableColumn="country.name" style="width:25%">Country <p-sortIcon field="country.name"></p-sortIcon></th>
-                <th pSortableColumn="representative.name" style="width:25%">Representative <p-sortIcon field="representative.name"></p-sortIcon></th>
-                <th pSortableColumn="status" style="width:25%">Status <p-sortIcon field="status"></p-sortIcon></th>
+                <th pSortableColumn="id" style="width:25%">ID 
+                <p-sortIcon field="id"></p-sortIcon>
+                </th>
+                <th pSortableColumn="createDate" style="width:25%">Oluşturma Tarihi <p-sortIcon field="createDate"></p-sortIcon>
+                </th>
+                <th pSortableColumn="subject" style="width:25%">Konu <p-sortIcon field="subject"></p-sortIcon>
+                </th>
+                <th pSortableColumn="isActive" style="width:25%">Durum 
+                <p-sortIcon field="isActive"></p-sortIcon>
+                </th>
             </tr>
             <tr>
                 <th>
-                    <input pInputText type="text" placeholder="Search by Name" class="w-full" />
+                <input pInputText type="text" (input)="applyFilter($event, 'id')" placeholder="ID ile ara" class="w-full">
+            </th>
+                <th>
+                    <input pInputText type="text" (input)="applyFilter($event, 'createDate')" placeholder="Tarih ile ara" class="w-full" />
                 </th>
                 <th>
-                    <input pInputText type="text" placeholder="Search by Country" class="w-full" />
+                    <input pInputText type="text" (input)="applyFilter($event, 'subject')" placeholder="Konu ile ara" class="w-full" />
                 </th>
                 <th>
-                    <input pInputText type="text" placeholder="Search by Representative" class="w-full" />
-                </th>
-                <th>
-                    <input pInputText type="text" placeholder="Search by Status" class="w-full" />
+                    <input pInputText type="text" (input)="applyFilter($event, 'isActive')" placeholder="Durum ile ara" class="w-full" />
                 </th>
         </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-customer>
-            <tr [pSelectableRow]="customer">
+        <ng-template pTemplate="body" let-ticket>
+            <tr [pSelectableRow]="ticket">
                 <td>
-                    <span class="p-column-title">Name</span>
-                    {{customer.name}}
+                    <span class="p-column-title">ID</span>
+                    {{ticket.id}}
                 </td>
                 <td>
-                    <span class="p-column-title">Country</span>
-                    <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + customer.country.code" style="width: 20px">
-                    <span class="ml-1 vertical-align-middle">{{customer.country.name}}</span>
+                    <span class="p-column-title">Create Date</span>
+                    <span class="ml-1 vertical-align-middle">{{date.transform(ticket.createDate, 'yyyy-MM-dd HH:mm:ss')}}</span>
                 </td>
                 <td>
-                    <span class="p-column-title">Representative</span>
-                    <img [alt]="customer.representative.name" src="https://primefaces.org/cdn/primeng/images/demo/avatar/{{customer.representative.image}}" width="32" style="vertical-align: middle" />
-                    <span class="ml-1 vertical-align-middle">{{customer.representative.name}}</span>
+                    <span class="p-column-title">Subject</span>
+                    <span class="ml-1 vertical-align-middle">{{ticket.subject}}</span>
                 </td>
                 <td>
                     <span class="p-column-title">Status</span>
-                    <p-tag [value]="customer.status" [severity]="getSeverity(customer.status)"></p-tag>
+                    <p-tag [value]="ticket.isActive ? 'Aktif' : 'Kapandı'" [severity]="getSeverity(ticket.isActive)"></p-tag>
                 </td>
             </tr>
         </ng-template>

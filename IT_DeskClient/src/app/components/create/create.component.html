@@ -5,7 +5,7 @@
 
 <div class="card flex justify-content-center" style="margin-top: 20px;">
     <span class="p-float-label">
-        <textarea id="float-input" rows="5" cols="30" pInputTextarea style="width: 100%;"></textarea>
+        <textarea [(ngModel)]="summary" id="float-input" rows="5" cols="30" pInputTextarea style="width: 100%;"></textarea>
         <label for="float-input">Summary</label>
     </span>
 </div>
@@ -24,5 +24,5 @@
 
 
 <div class="card">
-    <p-button label="Oluştur" [raised]="true" severity="success" icon="pi pi-plus" iconPos="right" [style]="{width: '100%'}"></p-button>
+    <p-button (click)="create()" label="Oluştur" [raised]="true" severity="success" icon="pi pi-plus" iconPos="right" [style]="{width: '100%'}"></p-button>
 </div>

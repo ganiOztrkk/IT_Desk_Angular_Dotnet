@@ -10,13 +10,12 @@ export class AuthService {
   userId: string = "";
   userFullName: string = "";
   username: string = "";
+  accessToken: string = "";
 
 
   constructor(
     private router: Router
-  ) {
-
-   }
+  ) {}
 
    checkAuthentication(): boolean{
     try {
@@ -25,6 +24,7 @@ export class AuthService {
         this.handleAuthenticationFailure();
         return false;
       }
+      this.accessToken = JSON.parse(accessToken);
       const decodedToken: any = jwtDecode(accessToken);
       if (!decodedToken) {
         this.handleAuthenticationFailure();

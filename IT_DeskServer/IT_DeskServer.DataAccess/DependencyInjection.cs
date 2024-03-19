@@ -49,7 +49,6 @@ public static class DependencyInjection
                 .UseSqlServer(configuration.GetConnectionString("db"));
         });
 
-
         services.AddIdentity<AppUser, AppRole>(opt =>
             {
                 opt.Password.RequireUppercase = true;
@@ -60,6 +59,7 @@ public static class DependencyInjection
             }).AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
+        services.AddHttpContextAccessor();
 
         services.Scan(action =>
         {
