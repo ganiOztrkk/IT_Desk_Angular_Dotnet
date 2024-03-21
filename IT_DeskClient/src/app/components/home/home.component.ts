@@ -46,7 +46,7 @@ export default class HomeComponent implements OnInit{
     public dialogService: DialogService,
     public messageService: MessageService,
     private http: HttpClient,
-    private auth: AuthService,
+    public auth: AuthService,
     public date: DatePipe,
     private error: ErrorService,
     private route: Router
@@ -149,7 +149,7 @@ export default class HomeComponent implements OnInit{
     this.dt1.filter(value, field, 'contains');
 }
 
-test(){
+  goTicketDetail(){
   try {
     this.route.navigateByUrl("ticket-details/" + this.selectedTickets.id)
   } catch (error) {

@@ -11,6 +11,7 @@ export class AuthService {
   userFullName: string = "";
   username: string = "";
   accessToken: string = "";
+  roles: string = "";
 
 
   constructor(
@@ -38,6 +39,7 @@ export class AuthService {
       this.userId = decodedToken.userId;
       this.userFullName = decodedToken.userFullName;
       this.username = decodedToken.username;
+      this.roles = decodedToken.roles;
       if (!this.userId) {
         this.handleAuthenticationFailure();
         return false;

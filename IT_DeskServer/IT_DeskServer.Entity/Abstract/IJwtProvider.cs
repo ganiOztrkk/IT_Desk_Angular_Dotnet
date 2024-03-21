@@ -5,5 +5,5 @@ namespace IT_DeskServer.Entity.Abstract;
 
 public interface IJwtProvider
 {
-    Task<IDataResult<string>> CreateTokenAsync(AppUser user, bool rememberMe); // geriye string result donen bir creatre token metodu yazdık
+    Task<IDataResult<string>> CreateTokenAsync(AppUser user, List<string> roles, bool rememberMe); // geriye string result donen bir create token metodu yazdık
 }

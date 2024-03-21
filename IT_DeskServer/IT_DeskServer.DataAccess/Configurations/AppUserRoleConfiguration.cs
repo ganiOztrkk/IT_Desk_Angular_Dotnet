@@ -4,10 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace IT_DeskServer.DataAccess.Configurations;
 
-public class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
+public class AppUserRoleConfiguration : IEntityTypeConfiguration<AppUserRole>
 {
-    public void Configure(EntityTypeBuilder<AppUser> builder)
+    public void Configure(EntityTypeBuilder<AppUserRole> builder)
     {
-        builder.ToTable("Users");
     }
 }

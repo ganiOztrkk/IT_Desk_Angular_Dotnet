@@ -12,14 +12,15 @@ namespace IT_DeskServer.DataAccess.Services;
 
 public class JwtProvider(IOptions<Jwt> jwt) : IJwtProvider //jwt sınıfını ioptions ile çağırıyoruz
 {
-    public Task<IDataResult<string>> CreateTokenAsync(AppUser user, bool rememberMe)
+    public Task<IDataResult<string>> CreateTokenAsync(AppUser user, List<string> roles, bool rememberMe)
     {
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, user.UserName ?? string.Empty),
             new Claim("userId", user.Id.ToString()),
             new Claim("userFullName", string.Join(" ", user.Name, user.Lastname)),
-            new Claim("username", user.UserName ?? string.Empty)
+            new Claim("username", user.UserName ?? string.Empty),
+            new Claim("roles", string.Join(" ", roles))
         };
 
         var tokenExpires = rememberMe ? DateTime.Now.AddDays(7) : DateTime.Now.AddMinutes(30);

@@ -14,10 +14,31 @@ public class TicketsController(ITicketService ticketService) : BaseController
         return Ok(new{message = result.Message});
     }
     
+    [HttpPost]
+    public async Task<IActionResult> AddDetailContent(TicketDetailDto request, CancellationToken cancellationToken)
+    {
+        var result = await ticketService.AddDetailContentAsync(request, cancellationToken);
+        return Ok(new{message = result.Message});
+    }
+    
     [HttpGet]
     public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
     {
         var result = await ticketService.GetAllAsync(cancellationToken);
+        return Ok(result.Data);
+    }
+    
+    [HttpGet("{ticketId}")]
+    public async Task<IActionResult> GetDetails(Guid ticketId, CancellationToken cancellationToken)
+    {
+        var result = await ticketService.GetDetailsAsync(ticketId ,cancellationToken);
+        return Ok(result.Data);
+    }
+    
+    [HttpGet("by-id/{ticketId}")]
+    public async Task<IActionResult> GetById(Guid ticketId, CancellationToken cancellationToken)
+    {
+        var result = await ticketService.GetByIdAsync(ticketId ,cancellationToken);
         return Ok(result.Data);
     }
 }

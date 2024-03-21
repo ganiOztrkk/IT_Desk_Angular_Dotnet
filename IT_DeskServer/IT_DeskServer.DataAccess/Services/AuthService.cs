@@ -2,14 +2,17 @@ using IT_DeskServer.Business.DTOs;
 using IT_DeskServer.Business.Services;
 using IT_DeskServer.Business.Validators;
 using IT_DeskServer.Core.ResultPattern;
+using IT_DeskServer.DataAccess.Context;
 using IT_DeskServer.Entity.Abstract;
 using IT_DeskServer.Entity.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace IT_DeskServer.DataAccess.Services;
 
 public class AuthService(
     UserManager<AppUser> userManager,
+    ApplicationDbContext context,
     IJwtProvider jwtProvider,
     IGoogleTokenVerifier googleTokenVerifier) : IAuthService
 {
@@ -30,6 +33,24 @@ public class AuthService(
             if (appUser is null) return new ErrorDataResult<string>(null,"Kullanıcı adı hatalı");
         }
 
+        var userRoles = await context.UserRoles
+            .Where(x => x.UserId == appUser.Id)
+            .Select(x => x.RoleId)
+            .ToListAsync(cancellationToken);
+        
+        var roles = new List<string>();
+        foreach (var item in userRoles)
+        {
+            var roleName = context.Roles
+                .Where(x => x.Id == item)
+                .Select(x => x.Name)
+                .FirstOrDefault();
+            if (roleName is not null)
+            {
+                roles.Add(roleName);
+            }
+        }
+
         if (appUser.WrongTryCount == 3)
         {
             var timeSpan = (appUser.LockOutDate - DateTime.Now).TotalMinutes;
@@ -46,7 +67,7 @@ public class AuthService(
         {
             appUser.WrongTryCount = 0;
             await userManager.UpdateAsync(appUser);
-            var token = await jwtProvider.CreateTokenAsync(appUser, request.HasRememberMe);
+            var token = await jwtProvider.CreateTokenAsync(appUser, roles, request.HasRememberMe);
             return new SuccessDataResult<string>(token.Data, "Giriş başarılı.");
         }
 
@@ -83,7 +104,24 @@ public class AuthService(
         var user = await userManager.FindByEmailAsync(request.Email);
         if (user is not null)
         {
-            var token = await jwtProvider.CreateTokenAsync(user, true);
+            var userRoles = await context.UserRoles
+                .Where(x => x.UserId == user.Id)
+                .Select(x => x.RoleId)
+                .ToListAsync(cancellationToken);
+        
+            var roles = new List<string>();
+            foreach (var item in userRoles)
+            {
+                var roleName = context.Roles
+                    .Where(x => x.Id == item)
+                    .Select(x => x.Name)
+                    .FirstOrDefault();
+                if (roleName is not null)
+                {
+                    roles.Add(roleName);
+                }
+            }
+            var token = await jwtProvider.CreateTokenAsync(user, roles, true);
             return new SuccessDataResult<string>(token.Data, "Giriş başarılı.");
         }
         else
@@ -96,7 +134,7 @@ public class AuthService(
                 Lastname = request.LastName ?? ""
             };
             await userManager.CreateAsync(newUser);
-            var token = await jwtProvider.CreateTokenAsync(newUser, true);
+            var token = await jwtProvider.CreateTokenAsync(newUser, [], true);
             return new SuccessDataResult<string>(token.Data, "Giriş başarılı.");
         }
     }

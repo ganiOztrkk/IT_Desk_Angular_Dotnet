@@ -43,7 +43,7 @@ export default class LoginComponent implements OnInit {
   loginModel: LoginModel = new LoginModel();
   googleLoginModel : GoogleLoginModel = new GoogleLoginModel();
   password: string = "1234Aa";
-  usernameOrEmail: string = "developer";
+  usernameOrEmail: string = "admin";
   hasRememberMe: boolean = false;
 
 constructor(
