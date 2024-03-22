@@ -23,6 +23,7 @@
     <ItemGroup>
       <Folder Include="Abstracts\" />
       <Folder Include="Attributes\" />
+      <Folder Include="Images\" />
     </ItemGroup>
 
     <ItemGroup>

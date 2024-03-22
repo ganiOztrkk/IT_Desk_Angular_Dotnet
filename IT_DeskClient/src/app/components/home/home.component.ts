@@ -95,6 +95,7 @@ export default class HomeComponent implements OnInit{
         }).subscribe({
           next: (res: any) => {
             this.getAllTickets();
+            
             this.messageService.add({
               severity: 'success',
               summary: "İşlem başarılı",

@@ -43,7 +43,7 @@ export default class DetailComponent {
   }
 
   getTicket(){
-    this.http.get("http://localhost:5180/api/Tickets/GetById/by-id/"+ this.ticketId, {
+     this.http.get("http://localhost:5180/api/Tickets/GetById/by-id/"+ this.ticketId, {
       headers: {
         "Authorization":"Bearer " + this.auth.accessToken
       }
@@ -53,6 +53,7 @@ export default class DetailComponent {
         this.ticket = res;
         this.ticketCreaterName = res.appUser.name;
         this.ticketCreaterLastName = res.appUser.lastName;
+        console.log(this.ticket);
       },
       error: (err: HttpErrorResponse) => {
         this.error.errorHandler(err);

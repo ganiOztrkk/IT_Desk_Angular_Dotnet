@@ -4,6 +4,7 @@ using IT_DeskServer.Business;
 using IT_DeskServer.DataAccess;
 using IT_DeskServer.WebApi.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -73,6 +74,13 @@ app.MapControllers()
         policy.RequireClaim(ClaimTypes.NameIdentifier); // en az 1 require claim gerekiyor.
         policy.AddAuthenticationSchemes("Bearer");
     }); // default olarak allowano atmadığım tüm controllerlarda giriş yapmadığım takdirde 401 atıcak.
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(app.Environment.ContentRootPath, "Images")),
+    RequestPath = "/Images"
+});
 
 
 app.Run();

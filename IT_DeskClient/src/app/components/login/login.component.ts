@@ -147,6 +147,11 @@ signIn(){
       },
       error: (err : HttpErrorResponse)=> {
         this.error.errorHandler(err);
+        this.messageService.add({
+          severity: 'warn', 
+          summary: 'Lütfen geçerli bilgi giriniz', 
+          detail: err.error.message 
+         });
       }
     })
   }

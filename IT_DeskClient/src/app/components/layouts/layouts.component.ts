@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
@@ -27,12 +27,12 @@ export class LayoutsComponent implements OnInit {
 
   ngOnInit() {
     this.itemsStart = [
-      {
+      /* {
         label: 'Anasayfa',
         icon: 'pi pi-fw pi-home',
         routerLink: '/',
         style: { 'font-size': '20px', 'margin-left': '20px' },
-      },
+      } */
     ];
   }
 

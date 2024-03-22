@@ -28,8 +28,8 @@
                     <ul class="d-flex py-1" style="gap: 20px; list-style: none;">
                         @for(file of ticket.fileUrl; track file){
                             <li>
-                                <a [href]="'/assets/files/' + file.fileUrl" target="_blank">
-                                    <img [src]="'/assets/files/' + file.fileUrl" width="350" alt="">                                        
+                                <a [href]="file.fileUrl" target="_blank">
+                                    <img [src]="file.fileUrl" width="350" alt="">                                        
                                 </a>
                             </li>
                         }@empty {
