@@ -97,8 +97,8 @@ export default class HomeComponent implements OnInit{
             this.getAllTickets();
             this.messageService.add({
               severity: 'success',
-              summary: res.message,
-              detail: '',
+              summary: "İşlem başarılı",
+              detail: res.message,
             });
           },
           error: (err :HttpErrorResponse) => {

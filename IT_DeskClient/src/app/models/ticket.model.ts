@@ -7,5 +7,5 @@ export class TicketModel{
     isActive: boolean = true;
     appUserId: string = "";
     appUser: any;
-    fileUrls: TicketFileUrlModel[] = [];
+    fileUrl: TicketFileUrlModel[] = [];
 }

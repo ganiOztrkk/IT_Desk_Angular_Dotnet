@@ -9,11 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { TicketDetailModel } from '../../models/ticket-detail.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ErrorService } from '../../services/error.service';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [CommonModule, CardModule, ButtonModule, FormsModule],
+  imports: [CommonModule, CardModule, ButtonModule, FormsModule, ToastModule],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css'
 })
@@ -30,7 +32,8 @@ export default class DetailComponent {
     public auth: AuthService,
     private activated: ActivatedRoute,
     private http: HttpClient,
-    private error: ErrorService
+    private error: ErrorService,
+    private messageService: MessageService
   ){
     this.activated.params.subscribe((res)=> {
       this.ticketId = res["value"];
@@ -79,22 +82,34 @@ export default class DetailComponent {
       content: this.content,
       ticketId: this.ticketId
     }
+    if (this.content == "") {
+      this.messageService.add({
+        severity: 'error',
+        summary: "Mesaj boş olamaz.",
+        detail: 'Mesaj alanına talebinizi yazın',
+      });
+    }
+    else{
+      this.http.post("http://localhost:5180/api/Tickets/AddDetailContent", data,{
+        headers: {
+          "Authorization":"Bearer " + this.auth.accessToken
+        }
+      }).subscribe({
+        next: () => {
+        this.content = "";
+        this.getDetails();
+        this.getTicket();
+        }
+      })
+    }
+  }
 
-    this.http.post("http://localhost:5180/api/Tickets/AddDetailContent", data,{
+  closeTicket(){
+    this.http.get("http://localhost:5180/api/Tickets/Close/close-ticket/"+ this.ticketId, {
       headers: {
         "Authorization":"Bearer " + this.auth.accessToken
       }
     }).subscribe({
-      next: () => {
-      this.content = "";
-      this.getDetails();
-      this.getTicket();
-      }
-    })
-  }
-
-  closeTicket(){
-    this.http.get("").subscribe({
       next: () => {
         this.getTicket();
       }

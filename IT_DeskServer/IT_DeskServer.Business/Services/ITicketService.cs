@@ -16,4 +16,6 @@ public interface ITicketService
     public Task<IDataResult<Ticket>> GetByIdAsync(Guid ticketId,CancellationToken cancellationToken);
     
     public Task<IResult> AddDetailContentAsync(TicketDetailDto request,CancellationToken cancellationToken);
+    
+    public Task<IResult> CloseAsync(Guid ticketId,CancellationToken cancellationToken);
 }

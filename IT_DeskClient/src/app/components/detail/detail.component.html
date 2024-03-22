@@ -1,13 +1,12 @@
 
+<p-toast></p-toast>
 <div class="container p-0">
-
     <h1 class="h3 mb-3">Mesajlar</h1>
     @if(ticket.isActive){
         <button class="btn btn-danger" (click)="closeTicket()"> Destek Kapat</button>
     }@else {
         <h3 class="text-danger">Destek kapandı!</h3>
     }
-
     <div class="card mt-2">
         <div class="row g-0">            
             <div class="col-12 col-lg-12 col-xl-12">
@@ -27,10 +26,10 @@
 
                 <div class="py-2 px-4 border-bottom d-none d-lg-block">
                     <ul class="d-flex py-1" style="gap: 20px; list-style: none;">
-                        @for(file of ticket.fileUrls; track file){
+                        @for(file of ticket.fileUrl; track file){
                             <li>
                                 <a [href]="'/assets/files/' + file.fileUrl" target="_blank">
-                                    <img [src]="'/assets/files/' + file.fileUrl" width="200" alt="">                                        
+                                    <img [src]="'/assets/files/' + file.fileUrl" width="350" alt="">                                        
                                 </a>
                             </li>
                         }@empty {
@@ -38,8 +37,6 @@
                         }                          
                     </ul> 
                 </div>
-
-
                 <div class="position-relative" >
                     <div class="chat-messages p-4">
                         @for(detail of details; track detail){

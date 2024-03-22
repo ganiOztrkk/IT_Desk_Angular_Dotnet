@@ -41,4 +41,11 @@ public class TicketsController(ITicketService ticketService) : BaseController
         var result = await ticketService.GetByIdAsync(ticketId ,cancellationToken);
         return Ok(result.Data);
     }
+    
+    [HttpGet("close-ticket/{ticketId}")]
+    public async Task<IActionResult> Close(Guid ticketId, CancellationToken cancellationToken)
+    {
+        var result = await ticketService.CloseAsync(ticketId ,cancellationToken);
+        return Ok(new{message = result.Message});
+    }
 }

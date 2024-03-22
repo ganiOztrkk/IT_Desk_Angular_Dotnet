@@ -59,7 +59,7 @@ public class TicketService
         await context.Set<Ticket>().AddAsync(ticket, cancellationToken);
         await context.SaveChangesAsync(cancellationToken);
         
-        return new SuccessResult("Ticket Oluşturuldu.");
+        return new SuccessResult("Destek Talebi Oluşturuldu.");
     }
 
     public async Task<IDataResult<List<TicketResponseDto>>> GetAllAsync(CancellationToken cancellationToken)
@@ -102,6 +102,7 @@ public class TicketService
     {
         var ticket = await context.Set<Ticket>()
             .Include(x => x.AppUser)
+            .Include(x => x.FileUrl)
             .FirstOrDefaultAsync(x => x.Id == ticketId, cancellationToken);
 
         if (ticket is null) return new ErrorDataResult<Ticket>(null, "Destek talebi bulunamadı.");
@@ -111,6 +112,7 @@ public class TicketService
 
     public async Task<IResult> AddDetailContentAsync(TicketDetailDto request, CancellationToken cancellationToken)
     {
+        var ticket = await context.Set<Ticket>().FirstOrDefaultAsync(x => x.Id == request.TicketId, cancellationToken);
         var ticketDetail = new TicketDetail
         {
             TicketId = request.TicketId,
@@ -118,10 +120,21 @@ public class TicketService
             Content = request.Content,
             CreateDate = DateTime.Now
         };
-
+        if (ticket is not null) ticket.IsActive = true;
+        
         await context.Set<TicketDetail>().AddAsync(ticketDetail, cancellationToken);
         await context.SaveChangesAsync(cancellationToken);
 
         return new SuccessResult("Mesaj gönderildi.");
+    }
+
+    public async Task<IResult> CloseAsync(Guid ticketId, CancellationToken cancellationToken)
+    {
+        var ticket = await context.Set<Ticket>().FindAsync(ticketId, cancellationToken);
+        if (ticket is null) return new ErrorResult("Destek bulunamadı.");
+
+        ticket.IsActive = false;
+        await context.SaveChangesAsync(cancellationToken);
+        return new SuccessResult("Destek kapandı.");
     }
 }
