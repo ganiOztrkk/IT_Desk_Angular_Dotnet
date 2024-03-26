@@ -1,6 +1,7 @@
 # IT DESK
 ## Projem, uygulama kullanıcılarının destek talep ettiği, desteğin içeriği üzerine görüşme yapabildiği ve durumunu takip edebildiği bir platform
 
+demo: https://itdesk.ganiozturk.com/
 
 Projemizin İşlevselliği:🌟
 
